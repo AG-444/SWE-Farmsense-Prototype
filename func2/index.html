@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yield Optimization Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-tractor"></i><a href="../landing.html" style="text-decoration: none; color: #4CAF50;">FarmSense</a></h1>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#" class="login-btn">Login</a></li>
+                        <li><a href="#" class="signup-btn">Sign Up</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h1>🌾 Interactive Yield Optimizer</h1>
+        
+        <div class="simulation-container">
+            <div class="input-column">
+                <div class="input-group">
+                    <label for="fieldSize">Field Size (hectares):</label>
+                    <input type="range" id="fieldSize" min="0.5" max="50" step="0.5" value="5">
+                    <input type="number" id="fieldSizeValue" min="0.5" max="50" step="0.5" value="5">
+                </div>
+
+                <div class="input-group">
+                    <label for="fertilizer">Fertilizer (kg/hectare):</label>
+                    <input type="range" id="fertilizer" min="0" max="300" value="150">
+                    <input type="number" id="fertilizerValue" min="0" max="300" value="150">
+                </div>
+
+                <div class="input-group">
+                    <label for="irrigation">Irrigation (mm/week):</label>
+                    <input type="range" id="irrigation" min="0" max="100" value="50">
+                    <input type="number" id="irrigationValue" min="0" max="100" value="50">
+                </div>
+
+                <div class="input-group">
+                    <label for="daysToHarvest">Days to Harvest:</label>
+                    <input type="range" id="daysToHarvest" min="60" max="180" value="120">
+                    <input type="number" id="daysToHarvestValue" min="60" max="180" value="120">
+                </div>
+            </div>
+
+            <div class="results-column">
+                <div class="yield-card">
+                    <h3>Predicted Yield</h3>
+                    <div class="yield-display">
+                        <span id="yieldValue">0</span>
+                        <span class="unit">kg</span>
+                    </div>
+                    <div class="yield-factors">
+                        <p>Field Size: <span id="factorField">1.0x</span></p>
+                        <p>Fertilizer Efficiency: <span id="factorFertilizer">1.0x</span></p>
+                        <p>Irrigation Impact: <span id="factorIrrigation">1.0x</span></p>
+                        <p>Growth Duration: <span id="factorDays">1.0x</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="optimization-tips">
+            <h3>💡 Optimization Strategies</h3>
+            <ul>
+                <li>Adjust fertilizer between 100-200 kg/ha for optimal results</li>
+                <li>Maintain irrigation between 40-60 mm/week for most crops</li>
+                <li>Longer growth periods generally increase yield up to 150 days</li>
+            </ul>
+        </div>
+        <div class="chart-container">
+            <div class="chart-box">
+                <canvas id="yieldTrendChart"></canvas>
+            </div>
+            <div class="chart-box">
+                <canvas id="fertilizerYieldChart"></canvas>
+            </div>
+            <div class="chart-box">
+                <canvas id="irrigationYieldChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Empowering Indian farmers with technology-driven solutions for sustainable agriculture.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> contact@agritech.com</p>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AgriTech Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

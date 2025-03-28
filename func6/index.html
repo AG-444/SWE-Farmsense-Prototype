@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harvest Price Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-tractor"></i><a href="../landing.html" style="text-decoration: none; color: #4CAF50;">FarmSense</a></h1>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#" class="login-btn">Login</a></li>
+                        <li><a href="#" class="signup-btn">Sign Up</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h1>🌾 Harvest Price Predictor</h1>
+        
+        <div class="input-section">
+            <div class="input-group">
+                <label for="cropType">Crop Type:</label>
+                <select id="cropType">
+                    <option value="wheat">Wheat</option>
+                    <option value="rice">Rice</option>
+                    <option value="corn">Corn</option>
+                    <option value="soybeans">Soybeans</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="yield">Expected Yield (quintals):</label>
+                <input type="number" id="yield" min="0" step="0.1" value="1">
+            </div>
+
+            <button onclick="predictPrice()">Predict Price</button>
+        </div>
+
+        <div id="results" class="results-card">
+            <h2>Price Prediction</h2>
+            <div id="priceEstimate"></div>
+            <div id="marketTrend"></div>
+            <div class="chart-container">
+                <canvas id="priceTrendChart"></canvas>
+            </div>
+        </div>
+
+        <div id="error" class="error-card"></div>
+    </div>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Empowering Indian farmers with technology-driven solutions for sustainable agriculture.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> contact@agritech.com</p>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AgriTech Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
